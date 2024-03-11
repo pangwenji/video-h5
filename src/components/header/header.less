@@ -1,0 +1,52 @@
+.t-header {
+    display: grid;
+    place-items: center;
+    padding: .69rem;
+    grid-template-rows: minmax(0, min-content);
+    grid-template-columns: repeat(3, minmax(0, max-content)) 1fr repeat(4, minmax(0, max-content));
+    grid-template-areas: 'logo credit refresh . wifi filter message hamburger';
+    background: linear-gradient(180deg, #2e2f40, #111217 91.67%);
+    &.lobby-header {
+        .logo {
+            background-image: url('@/assets/home/icon_logo_landscape.png');
+            background-position: 0;
+            background-repeat: no-repeat;
+            background-size: cover;
+            grid-area: logo;
+            width: 80px;
+            height: 22px;
+            margin-right: 0.75rem;
+        }
+        .landscape {
+        }
+        .t-credit {
+            grid-area: credit;
+            margin-right: 0.375rem;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+
+            .t-text-white {
+                color: rgba(255, 255, 255, 1)
+            }
+        }
+        .t-wifi {
+            grid-area: wifi;
+            margin-right: 1rem;
+            cursor: pointer;
+        }
+        .t-filter {
+            grid-area: filter;
+            margin-right: 1rem;
+            cursor: pointer;
+        }
+        .t-hamburger {
+            grid-area: hamburger;
+            cursor: pointer;
+            position: relative;
+        }
+        .new-feature {
+            margin-right: 1rem;
+        }
+    }
+}

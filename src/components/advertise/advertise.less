@@ -1,0 +1,121 @@
+.advertise-inset {
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	position: fixed;
+	.advertise_container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: absolute;
+		left: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		.advertise_content {
+			.advertise_dialog-content {
+				overflow: hidden;
+				padding: 0;
+				width: 300px;
+
+				border-radius: 0.75rem;
+				border: 1px solid rgba(76, 88, 131, 1);
+				background-image: linear-gradient(180deg, var(--tw-gradient-stops));
+				--tw-gradient-from: #2e2f40;
+				--tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(46, 47, 64, 0));
+				--tw-gradient-to: #111217;
+				.casino {
+					background-position: 50%;
+					background-size: cover;
+				}
+				.casino-info-img {
+					width: 100%;
+					height: 250px;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+				}
+				.resortworld {
+					background-repeat: no-repeat;
+					background-image: url('@/assets/table-view/img_casino_resortworld.jpg');
+				}
+				.text-area {
+					padding-top: 1rem;
+					padding-bottom: 1rem;
+					display: flex;
+					flex-direction: column;
+					justify-content: space-between;
+					.title {
+						font-weight: 500;
+						font-size: 1.125rem;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						margin-bottom: 0.75rem;
+					}
+					.text-center {
+					}
+					.t-text-gold-500 {
+						color: rgba(252, 239, 188, 1);
+					}
+					.t-text-sm {
+						font-size: 14px;
+					}
+
+					.t-text-center {
+						text-align: center;
+					}
+					.t-text-xs {
+						font-size: 12px;
+					}
+					.t-py-3 {
+						padding-top: 0.75rem;
+						padding-bottom: 0.75rem;
+					}
+					.t-px-5 {
+						padding-left: 1.25rem;
+						padding-right: 1.25rem;
+					}
+					.t-mb-2 {
+						margin-bottom: 0.5rem;
+					}
+					.subTitle {
+						font-size: 12px;
+						padding-top: 0.75rem;
+						padding-bottom: 0.75rem;
+						margin-bottom: 0.5rem;
+						color: #ffffff;
+					}
+					.t-button {
+						width: 50%;
+						margin-left: auto;
+						margin-right: auto;
+						background-color: rgba(252, 239, 188, 1);
+						color: rgba(51, 51, 51, 1);
+
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            border-radius: .5rem;
+                            padding: 1rem;
+                            padding-top: .5rem;
+                            padding-bottom: .5rem;
+                            text-align: center;
+                            font-weight: 500;
+                            min-height: 40px;
+					}
+				}
+			}
+		}
+	}
+	.vfm__overlay {
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		position: absolute;
+		background-color: rgba(0, 0, 0, 0.5);
+	}
+}
+

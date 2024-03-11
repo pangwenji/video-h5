@@ -1,0 +1,125 @@
+.tip__container {
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	position: absolute;
+	.tip__content {
+		width: 100%;
+		bottom: 0;
+		position: absolute;
+		.tips-dialog {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			background-image: linear-gradient(180deg, var(--tw-gradient-stops));
+			--tw-gradient-from: #2e2f40;
+			--tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(46, 47, 64, 0));
+			--tw-gradient-to: #111217;
+			padding: 0.75rem 0.25rem;
+			font-size: 14px;
+			.t-text-lg {
+				color: rgba(252, 239, 188, 1);
+				font-size: 1.125rem;
+				text-align: center;
+			}
+			.t-mt-3 {
+				margin-bottom: 1rem;
+				margin-top: 0.75rem;
+				.t-grid {
+					gap: 0.25rem;
+					grid-template-columns: repeat(4, minmax(0, 1fr));
+					display: grid;
+					.chip-btn {
+						cursor: pointer;
+						border-radius: 0.25rem;
+						border: 1px solid transparent;
+						background-color: rgba(255, 255, 255, 0.05);
+						padding-top: 0.75rem;
+						padding-bottom: 0.5rem;
+						.chip-btn-item {
+							justify-content: center;
+							align-items: center;
+							flex-direction: column;
+							display: flex;
+							.chip_default() {
+								background-image: url('@/assets/table-view/sprites_chips_default.png');
+								background-repeat: no-repeat;
+								background-size: cover;
+								width: 40px;
+								height: 28px;
+							}
+							.chip_default_5 {
+								.chip_default();
+								background-position: 0 0;
+							}
+							.chip_default_25 {
+								.chip_default();
+								background-position: -80px 0;
+							}
+							.chip_default_100 {
+								.chip_default();
+								background-position: -120px 0;
+							}
+							.chip_default_500 {
+								.chip_default();
+								background-position: -160px 0;
+							}
+							.chip_default_1000 {
+								.chip_default();
+								background-position: -200px 0;
+							}
+							.chip_default_5000 {
+								.chip_default();
+								background-position: -240px 0;
+							}
+							.chip_default_10000 {
+								.chip_default();
+								background-position: -280px 0;
+							}
+							.chip_default_100000 {
+								.chip_default();
+								background-position: -320px 0;
+							}
+							.t-mt-1 {
+								margin-top: 0.25rem;
+								color: #ffffff;
+							}
+						}
+                        &.active{
+                            border-color: rgba(255,255,255,.2);
+                            background-color: rgba(255,255,255,.5);
+
+                        }
+					}
+				}
+			}
+			.t-mb-1 {
+				width: 50%;
+				margin-bottom: 0.25rem;
+				margin-left: auto;
+				margin-right: auto;
+				.t-button {
+					background-color: rgba(252, 239, 188, 1);
+					color: rgba(51, 51, 51, 1);
+
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 100%;
+                    border-radius: 0.5rem;
+                    padding: 1rem;
+                    padding-top: 0.5rem;
+                    padding-bottom: 0.5rem;
+                    text-align: center;
+                    font-weight: 500;
+                    min-height: 40px;
+                    &.disabled{
+                        opacity: .5;
+                    }
+				}
+			}
+		}
+	}
+}
+

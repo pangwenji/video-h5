@@ -1,0 +1,55 @@
+{
+  "name": "kk-baccarat-h5",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "dev:prop": "vite --mode production",
+    "build": "vite build",
+
+    "build:dev": "vite build --mode development",
+    "build-integrate": "vite build --config vite.config.js",
+    "preview": "vite preview",
+    "lint": "eslint .",
+    "format": "prettier --write \"src/**/*\""
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.3",
+    "@vue/cli-service": "^5.0.8",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "eslint-plugin-vue": "^9.20.1",
+    "less": "^4.2.0",
+    "less-loader": "^12.1.0",
+    "lodash": "^4.17.21",
+    "path": "^0.12.7",
+    "prettier": "^3.2.4",
+    "rollup-plugin-visualizer": "^5.12.0",
+    "unplugin-auto-import": "^0.17.4",
+    "unplugin-vue-components": "^0.26.0",
+    "vite": "^5.0.8"
+  },
+  "dependencies": {
+    "@vueuse/core": "^10.7.2",
+    "amfe-flexible": "^2.2.1",
+    "axios": "^1.6.7",
+    "better-scroll": "^2.5.1",
+    "crypto-js": "^4.2.0",
+    "element-plus": "^2.4.3",
+    "fabric": "^5.3.0",
+    "lib-flexible": "^0.3.2",
+    "mitt": "^3.0.1",
+    "pinia": "^2.1.7",
+    "pinia-plugin-persistedstate": "^3.2.1",
+    "qs": "^6.11.2",
+    "vite-plugin-top-level-await": "^1.4.1",
+    "vue": "^3.4.15",
+    "vue-i18n": "^9.9.1",
+    "vue-router": "^4.2.5"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ]
+}

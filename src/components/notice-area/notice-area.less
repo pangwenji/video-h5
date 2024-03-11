@@ -1,0 +1,123 @@
+.notice-area {
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	position: fixed;
+
+	.notice-overlay {
+		background-color: rgba(0, 0, 0, 0.5);
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		position: absolute;
+	}
+
+	.notice-container {
+		border-radius: 0.75rem;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: absolute;
+
+		.notice-content {
+			width: 350px;
+			border-radius: 0.75rem;
+			border: 1px solid rgba(76, 88, 131, 1);
+			--tw-gradient-from: #2e2f40;
+			--tw-gradient-to: #111217;
+			--tw-border-opacity: 1;
+			--tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(46, 47, 64, 0));
+			background: linear-gradient(180deg, var(--tw-gradient-stops));
+
+			.base-dialog-content {
+				display: grid;
+				grid-template-columns: repeat(1, minmax(0, 1fr));
+				font-size: 12px;
+				line-height: 1;
+				grid-template-rows: minmax(min-content, max-content) 1fr minmax(min-content, max-content);
+				grid-auto-rows: minmax(min-content, max-content);
+				max-height: 75vh;
+				padding-left: 1.75rem;
+				padding-right: 1.75rem;
+				padding-top: 1rem;
+				padding-bottom: 1.25rem;
+
+				.title {
+					color: rgba(252, 239, 188, 1);
+					font-weight: 500;
+					font-size: 1.125rem;
+					text-align: center;
+					margin-bottom: 1.75rem;
+				}
+
+				.text-gold-500 {
+					color: rgba(252, 239, 188, 1);
+					font-weight: 500;
+					overflow-y: auto;
+
+					.t-info {
+						width: 100%;
+						border-collapse: collapse;
+						border-width: 1px;
+						border-color: rgba(252, 239, 188, 1);
+
+						.t-border-gold-500 {
+							border: 1px solid;
+							border-color: rgba(252, 239, 188, 1);
+						}
+					}
+
+					.t-info tbody tr {
+						border: 1px solid;
+						border-color: rgba(252, 239, 188, 1);
+						text-align: center;
+					}
+
+					.t-info th {
+						padding-top: 0.5rem;
+						padding-bottom: 0.5rem;
+					}
+
+					.t-info td {
+						padding-top: 0.5rem;
+						padding-bottom: 0.5rem;
+
+						.t-table-description {
+							padding-left: 0.5rem;
+							padding-right: 0.5rem;
+							line-height: 1.25;
+						}
+					}
+
+					.t-info tbody td {
+						border: 1px solid;
+						border-color: rgba(252, 239, 188, 1);
+					}
+				}
+
+				.close {
+					margin-top: 0.875rem;
+					margin-left: auto;
+					margin-right: auto;
+					background-color: rgba(252, 239, 188, 1);
+					color: rgba(51, 51, 51, 1);
+					width: 140px;
+
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					border-radius: 0.5rem;
+					text-align: center;
+					font-weight: 500;
+					min-height: 40px;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,466 @@
+.bet-result {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 300px;
+	z-index: 50;
+}
+.game-result {
+	transform: translateZ(5px);
+	.bet-result-bg {
+		display: flex;
+		background: rgba(24, 25, 33, 0.9);
+		height: 100%;
+		flex-direction: column;
+		.win-lose {
+			padding-top: 0.25rem;
+			padding-bottom: 0.25rem;
+			text-align: center;
+			font-size: 1.5rem;
+			font-weight: 600;
+			--tw-text-opacity: 1;
+			color: rgba(255, 255, 255, var(--tw-text-opacity));
+			opacity: 0;
+			transition-property:
+				background-color,
+				border-color,
+				color,
+				fill,
+				stroke,
+				opacity,
+				box-shadow,
+				transform,
+				filter,
+				backdrop-filter,
+				-webkit-box-shadow,
+				-webkit-transform,
+				-webkit-filter,
+				-webkit-backdrop-filter;
+			transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+			transition-duration: 0.15s;
+			transition-duration: 0.25s;
+			.t-text-gold-500 {
+				color: rgba(252, 239, 188, 1);
+			}
+			.t-text-gray-400 {
+				color: rgba(155, 155, 155, 1);
+			}
+		}
+		.bet-result-cards {
+			display: grid;
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			grid-template-rows: repeat(1, minmax(0, 1fr));
+			gap: 0.25rem;
+			position: relative;
+			flex-grow: 1;
+			padding: 0.5rem;
+			padding-top: 0;
+			z-index: 5;
+			cursor: pointer;
+			.cards-container {
+				position: relative;
+				display: flex;
+				align-items: baseline;
+			}
+			.player {
+				border: 2px solid #3c91f4;
+				.electronic-card {
+					position: relative;
+					text-align: center;
+					top: calc(50% + 15px);
+					transform: translateY(-50%);
+					width: 60%;
+					// 闲家
+					.third-card-player {
+						
+						.horizontal {
+							animation: flippedHorizontal 0.16s linear forwards;
+							transform: rotateX(0) rotate(90deg);
+						}
+						
+						// 闲家
+						.third {
+							animation-delay: 0.6s;
+							.e-front {
+								transform: rotateY(180deg);
+							}
+							.card_type {
+								background-repeat: no-repeat;
+								background-size: cover;
+							}
+							figure {
+								margin: 0;
+								display: block;
+								position: absolute;
+								width: 100%;
+								height: 100%;
+								backface-visibility: hidden;
+							}
+							.e-back {
+								background: url('@/assets/table-view/cover-poker.png') 0 0 no-repeat;
+								background-size: cover;
+							}
+						}
+						@keyframes flippedHorizontal {
+							100% {
+								transform: rotateX(-180deg) rotate(90deg);
+							}
+						}
+					}
+					div {
+						.e-card {
+							width: 40px;
+							height: 60px;
+							margin: 0 4px;
+							transform-style: preserve-3d;
+							display: inline-block;
+							position: relative;
+						}
+						.flipped {
+							animation: flipped 0.16s linear forwards;
+						}
+						@keyframes flipped {
+							100% {
+								transform: rotateY(180deg);
+							}
+						}
+						.first {
+							animation-delay: 0.5s;
+							.e-front {
+								transform: rotateY(180deg);
+							}
+							.card_type {
+								background-repeat: no-repeat;
+								background-size: cover;
+							}
+							figure {
+								margin: 0;
+								display: block;
+								position: absolute;
+								width: 100%;
+								height: 100%;
+								backface-visibility: hidden;
+							}
+							.e-back {
+								background: url('@/assets/table-view/cover-poker.png') 0 0 no-repeat;
+								background-size: cover;
+							}
+						}
+						.second {
+							animation-delay: 0.6s;
+							.e-front {
+								transform: rotateY(180deg);
+							}
+							
+							figure {
+								margin: 0;
+								display: block;
+								position: absolute;
+								width: 100%;
+								height: 100%;
+								backface-visibility: hidden;
+							}
+							.e-back {
+								background: url('@/assets/table-view/cover-poker.png') 0 0 no-repeat;
+								background-size: cover;
+							}
+						}
+					}
+				}
+				.board-wrapper {
+					position: absolute;
+					top: 0;
+					width: 100%;
+					height: 30px;
+					.player-board {
+						left: 0;
+						width: 140px;
+						border-top: 30px solid #3c91f4;
+						border-right: 30px solid transparent;
+						border-bottom: 0px solid transparent;
+						border-left: 0px solid transparent;
+						position: absolute;
+					}
+					.player-text {
+						padding-left: 0.5rem;
+						color: #fff;
+					}
+					.board-text {
+						position: absolute;
+						font-size: 20px;
+						top: -1px;
+					}
+				}
+				.points {
+					position: relative;
+					flex-grow: 1;
+					text-align: center;
+					align-self: flex-end;
+					font-size: 3.75rem;
+					line-height: 1;
+					font-weight: 600;
+					transform: translateY(-80%);
+					animation-delay: 0.75s;
+					animation-duration: 0.25s;
+					.t-text-blue-500 {
+						color: rgba(60, 145, 244, 1);
+					}
+					.fade-animation {
+						opacity: 0;
+						animation: fadeAnimation 0.4s linear 1.5s 1 forwards;
+					}
+					@keyframes fadeAnimation {
+						0% {
+							opacity: 0;
+						}
+						100% {
+							opacity: 1;
+						}
+					}
+				}
+			}
+			.cards-container {
+				position: relative;
+				display: flex;
+				align-items: baseline;
+			}
+			.banker {
+				border: 2px solid #ed4463;
+				.electronic-card {
+					position: relative;
+					text-align: center;
+					top: calc(50% + 15px);
+					transform: translateY(-50%);
+					width: 60%;
+
+					.third-card {
+						animation-delay: 0.7s;
+
+						.horizontal {
+							animation: flippedHorizontal 0.16s linear forwards;
+							transform: rotateX(0) rotate(90deg);
+						}
+
+						.e-card {
+							width: 40px;
+							height: 60px;
+							margin: 0 4px;
+
+							transform-style: preserve-3d;
+							display: inline-block;
+							position: relative;
+						}
+						// 庄家
+						.third {
+							animation-delay: 0.7s;
+							.e-front {
+								transform: rotateY(180deg);
+								
+							}
+							.card_type {
+								background-repeat: no-repeat;
+								background-size: cover;
+							}
+							figure {
+								margin: 0;
+								display: block;
+								position: absolute;
+								width: 100%;
+								height: 100%;
+								backface-visibility: hidden;
+							}
+							.e-back {
+								background: url('@/assets/table-view/cover-poker.png') 0 0 no-repeat;
+								background-size: cover;
+							}
+						}
+						@keyframes flippedHorizontal {
+							100% {
+								transform: rotateX(-180deg) rotate(90deg);
+							}
+						}
+					}
+					div{
+
+						.e-card {
+							width: 40px;
+							height: 60px;
+							margin: 0 4px;
+							
+							transform-style: preserve-3d;
+							display: inline-block;
+							position: relative;
+						}
+						.flipped {
+							animation: flipped 0.16s linear forwards;
+						}
+						@keyframes flipped {
+							100% {
+								transform: rotateY(180deg);
+							}
+						}
+						.first {
+							animation-delay: 0.5s;
+							.e-front {
+								transform: rotateY(180deg);
+							}
+							
+	
+							.card_type {
+								background-repeat: no-repeat;
+								background-size: cover;
+							}
+							 figure {
+								margin: 0;
+								display: block;
+								position: absolute;
+								width: 100%;
+								height: 100%;
+								backface-visibility: hidden;
+							}
+							.e-back {
+								background: url('@/assets/table-view/cover-poker.png') 0 0 no-repeat;
+								background-size: cover;
+	
+								
+							}
+						}
+						.second{
+							animation-delay: 0.6s;
+							.e-front {
+								transform: rotateY(180deg);
+								background-repeat: no-repeat;
+								background-size: cover;
+							}
+							
+	
+							.card_type {
+								background-repeat: no-repeat;
+								background-size: cover;
+							}
+							
+							 figure {
+								margin: 0;
+								display: block;
+								position: absolute;
+								width: 100%;
+								height: 100%;
+								backface-visibility: hidden;
+							}
+							.e-back {
+								background: url('@/assets/table-view/cover-poker.png') 0 0 no-repeat;
+								background-size: cover;
+							}
+						}
+					}
+				}
+				
+				.board-wrapper {
+					position: absolute;
+					top: 0;
+					width: 100%;
+					height: 30px;
+
+					.board {
+						position: absolute;
+					}
+
+					.banker-board {
+						right: 0;
+						width: 140px;
+						border-top: 30px solid #ed4463;
+						border-right: 0px solid transparent;
+						border-bottom: 0px solid transparent;
+						border-left: 30px solid transparent;
+						position: absolute;
+					}
+					.banker-text {
+						right: 0;
+						padding-right: 0.5rem;
+						color: #ffffff;
+					}
+					.board-text {
+						position: absolute;
+						font-size: 20px;
+						top: -1px;
+					}
+				}
+				.points {
+					position: relative;
+					flex-grow: 1;
+					text-align: center;
+					align-self: flex-end;
+					font-size: 3.75rem;
+					line-height: 1;
+					font-weight: 600;
+					transform: translateY(-80%);
+					animation-delay: 0.75s;
+					animation-duration: 0.25s;
+					.t-text-red-500 {
+						color: rgba(237, 68, 99, 1);
+					}
+					.fade-animation {
+						opacity: 0;
+						animation: fadeAnimation 0.4s linear 1.5s 1 forwards;
+					}
+					@keyframes fadeAnimation {
+						0% {
+							opacity: 0;
+						}
+						100% {
+							opacity: 1;
+						}
+					}
+				}
+				.electronic-banker {
+					right: 0;
+				
+				}
+				
+			}
+            .electronic-center {
+                position: absolute;
+                display: flex;
+                width: 40%;
+                flex-direction: column;
+                align-items: center;
+                padding-top: 1.5rem;
+                left: 50%;
+                transform: translateX(-50%);
+                height: 100%;
+
+                 .winner-icon{
+                    width: 100%;
+                    --tw-scale-x: 0;
+                    --tw-scale-y: 0;
+                    opacity: 0;
+                    transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter,-webkit-box-shadow,-webkit-transform,-webkit-filter,-webkit-backdrop-filter;
+                    transition-timing-function: cubic-bezier(.4,0,.2,1);
+                    transition-duration: .45s;
+                    img{
+                        position: absolute;
+                        height: auto;
+                        width: 100%;
+                        z-index: 10;
+
+                    }
+                }
+
+				.winner-animation {
+					opacity: 0;
+					animation: fadeAnimation 0.5s linear 2.5s 1 forwards;
+				}
+				@keyframes fadeAnimation {
+					0% {
+						opacity: 0;
+					}
+					100% {
+						opacity: 1;
+					}
+				}
+
+            }
+		}
+	}
+}
+

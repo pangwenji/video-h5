@@ -1,0 +1,15 @@
+<svg
+			xmlns:xlink="http://www.w3.org/1999/xlink"
+			xmlns="http://www.w3.org/2000/svg"
+			
+			class="t-w-4 t-h-4"
+			width="20"
+			height="20"
+		>
+			<defs>
+				<symbol xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" id="hamburger">
+					<path fill="#ffffff" d="M2.5 16.25h15v-2.08h-15v2.08zm0-5h15V9.17h-15v2.08zm0-7.08v2.08h15V4.17h-15z"></path>
+				</symbol>
+			</defs>
+			<use  xlink:href="#hamburger"></use>
+</svg>

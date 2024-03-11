@@ -1,0 +1,96 @@
+.dialogs-view {
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	position: fixed;
+	.dialogs-view-mask {
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background-color: rgba(0, 0, 0, 0.5);
+	}
+	.dialogs-view_container {
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: absolute;
+        color: #ffffff;
+		.dialogs-view_content {
+			.casino {
+				background-position: 50%;
+				background-size: cover;
+			}
+			.dialogs-view_section {
+				border-width: 1px;
+				border-color: rgba(76, 88, 131, 1);
+				border-radius: 0.75rem;
+				width: 280px;
+				height: 280px;
+
+				.dialogs-view__body {
+					height: 100%;
+					width: 100%;
+					padding: 0.5rem;
+					border-radius: 11px;
+					background: #23263f;
+					mask: linear-gradient(90deg, rgba(139, 79, 79, 0.9), rgba(0, 0, 0, 0.9));
+					display: grid;
+					grid-template-columns: repeat(1, minmax(0, 1fr));
+					grid-template-rows: repeat(1, minmax(0, 1fr));
+					place-content: center;
+					justify-items: center;
+					grid-template-rows: minmax(min-content, max-content);
+					grid-auto-rows: minmax(min-content, max-content);
+					.room-logo {
+						cursor: default;
+						border-style: none;
+						width: 138px;
+						height: 80px;
+
+						position: relative;
+						border-radius: 4px;
+						border: 1px solid #212121;
+						background-repeat: no-repeat;
+						background-position: 50%;
+						background-size: contain;
+					}
+
+                    .t-mt-2 {
+                        margin-top: .5rem;
+                    }
+
+                    .zh-cn {
+                        letter-spacing: 6px;
+                    }
+
+                  .casino-subtitle{
+                        padding-left: .625rem;
+                        padding-right: .625rem;
+                        padding-top: .25rem;
+                        padding-bottom: .25rem;
+                        font-size: 12px;
+                        background: #596386;
+                    }
+
+                   .t-text-base {
+                        font-size: 16px;
+                    }
+                  .casino-name {
+                        font-size: 16px;
+                        color: #dedede;
+                    }
+					.royce {
+						// background-image: url('@/assets/table-view/royce.png');
+					}
+				}
+			}
+		}
+	}
+}
+

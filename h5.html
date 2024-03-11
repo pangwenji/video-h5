@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no,viewport-fit=cover" />
+
+		<title>Vite + TS</title>
+	</head>
+
+	<body style="margin: 0">
+		<div id="app"></div>
+
+		<script type="module" src="/public/kk-player/js/jessibuca-pro.js"></script>
+
+		<script type="module" src="/src/main.js"></script>
+		<script>
+			function isMobile() {
+				let flag = navigator.userAgent.match(
+					/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i
+				);
+				return flag;
+			}
+			function parseUrl(url) {
+				const urlPattern = new RegExp(/^(https?):\/\/([^:/]+)(:([0-9]+))?([^?#]*)(\?[^#]+)?(#.+)?$/);
+				const queryParamsPattern = /(?:[?&])([^=&]+)(=([^&]*))?/g;
+				const match = urlPattern.exec(url);
+				if (!match) return null;
+				const [, protocol, host, , port, path, queryString, hash] = match;
+				const queryParams = {};
+				let queryParamsMatch;
+				while ((queryParamsMatch = queryParamsPattern.exec(queryString)) !== null) {
+					const [, key, , value] = queryParamsMatch;
+					queryParams[key] = value || '';
+				}
+				return {
+					protocol,
+					host,
+					port,
+					path,
+					queryString,
+					queryParams,
+					hash,
+				};
+			}
+			if (!isMobile()) {
+				// const checkToken = location.href.match(/token=([^&]+)/)
+				// const urlInfo = parseUrl(location.href);
+				// location.replace(location.origin+'/pc.html'+ urlInfo.queryString)
+				const checkToken = location.href.match(/token=([^&]+)/);
+				const urlInfo = parseUrl(location.href);
+				let params = '';
+				if (urlInfo.queryString) {
+					params = urlInfo.queryString;
+				} else {
+					const replace_url = parseUrl(location.href.replace('#/'));
+					if (replace_url.queryString) {
+						params = replace_url.queryString;
+					} else {
+						params = replace_url.queryParams && replace_url.queryParams.token ? `?token=${replace_url.queryParams.token}` : '';
+					}
+				}
+				location.replace(`${location.origin}/pc.html${params}`);
+			}
+		</script>
+		<style>
+			html::-webkit-scrollbar {
+				width: 0;
+				/* 隐藏垂直滚动条 */
+				height: 0;
+				/* 隐藏水平滚动条 */
+			}
+
+			body {
+				scrollbar-width: none;
+				background: url('./src/assets/home/bg_main.jpg');
+				background-color: #000;
+				font-size: 16px;
+			}
+		</style>
+	</body>
+</html>
+
